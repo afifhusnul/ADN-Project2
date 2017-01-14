@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">P02-PopularMovie</string>
+
+    <!-- Menu -->
+    <string name="menu_sort">Category</string>
+    <string name="menu_sort_popular">Popular</string>
+    <string name="menu_sort_top_rated">Top Rated</string>
+    <string name="menu_sort_favourite">Favourite</string>
+
+
+    <!-- Label for Detail layout-->
+    <string name="details_backdrop">Detail Backdrop</string>
+    <string name="details_poster">Detail Poster</string>
+    <string name="details_release">Released  </string>
+    <string name="details_rating">Rating  </string>
+    <string name="details_synopsis">Synopsis  </string>
+    <string name="details_trailers">Trailers  </string>
+    <string name="details_movie_reviews">Reviews  </string>
+    <string name="details_share_trailer">Share trailer</string>
+</resources>

@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <!-- BASE MENU CATEGORIES-->
+    <item
+        android:icon="@drawable/ic_menu"
+        android:title="@string/menu_sort"
+        app:showAsAction="ifRoom">
+
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/menu_sort_popular"
+                    android:enabled="true"
+                    android:title="@string/menu_sort_popular"
+                    android:visible="true" />
+
+                <item
+                    android:id="@+id/menu_sort_top_rated"
+                    android:enabled="true"
+                    android:title="@string/menu_sort_top_rated"
+                    android:visible="true" />
+
+                <item
+                    android:id="@+id/menu_sort_favourite"
+                    android:enabled="true"
+                    android:title="@string/menu_sort_favourite"
+                    android:visible="true" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

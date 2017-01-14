@@ -105,12 +105,14 @@ public class MovieFragment extends Fragment implements LoaderManager.LoaderCallb
     @Override
     public void onStart() {
         super.onStart();
+        String PreOrderBy = prefs.getString(Constant.SORT_ORDER, Constant.SORTBY_DEFAULT_PARAM);
 
-        Log.i(LOG_TAG, "Info onStart orderBy :  "+OrderBy);
-
-        if (movies.size() > 0 && OrderBy.isEmpty()) {
+        if (movies.size() > 0 && !PreOrderBy.equals(OrderBy)) {
+            Log.i(LOG_TAG, "Call Update Poster :  "+OrderBy);
             updatePosterAdapter();
         } else {
+            Log.i(LOG_TAG, "Call New Reload :  "+OrderBy);
+            OrderBy = PreOrderBy;
             if(new NetworkUtil(getContext()).isConnected()) {
                 getMoviesData();
             } else {
@@ -128,7 +130,6 @@ public class MovieFragment extends Fragment implements LoaderManager.LoaderCallb
         switch (item.getItemId()) {
             case R.id.menu_sort_popular:
                 OrderBy = String.valueOf(Constant.POPULAR);
-                getActivity().setTitle("Popuplar Movies");
                 /*-- Load Movie Data -- POPULAR --*/
                 getMoviesData();
                 if (item.isChecked()) item.setChecked(false);
@@ -138,7 +139,6 @@ public class MovieFragment extends Fragment implements LoaderManager.LoaderCallb
 
             case R.id.menu_sort_top_rated:
                 OrderBy = String.valueOf(Constant.TOP_RATED);
-                getActivity().setTitle("Top Movies");
                 /*-- Load Movie Data -- TOP RATED --*/
                 getMoviesData();
                 if (item.isChecked()) item.setChecked(false);
@@ -147,7 +147,6 @@ public class MovieFragment extends Fragment implements LoaderManager.LoaderCallb
 
             case R.id.menu_sort_favourite:
                 OrderBy = String.valueOf(Constant.FAVOURITE);
-                getActivity().setTitle("Favourites Movies");
                 /*-- Load Movie Data -- FAVOURITE --*/
                 getMoviesData();
                 if (item.isChecked()) item.setChecked(false);

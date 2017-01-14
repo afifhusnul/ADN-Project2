@@ -220,6 +220,9 @@ public class DetailFragment extends Fragment {
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, trailer.getName() + ": "
                 + trailer.getTrailerUrl());
         mShareActionProvider.setShareIntent(sharingIntent);
+        if (mShareActionProvider == null) {
+            return;
+        }
     }
 
 }

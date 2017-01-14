@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).commit();
         } else {
             fragment = (MovieFragment) getSupportFragmentManager().getFragment(savedInstanceState, "movieFragment");
+
         }
     }
 
